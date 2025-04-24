@@ -1,0 +1,5 @@
+= Kết luận
+
+Chúng tôi đã trình bày NICE-SLAM, một phương pháp SLAM hình ảnh dày đặc kết hợp giữa lợi ích của các đại diện ẩn của neural với khả năng mở rộng của một đại diện cảnh dựa trên lưới phân cấp. So với một đại diện cảnh sử dụng một MLP lớn, các thí nghiệm của chúng tôi cho thấy rằng đại diện của chúng tôi (MLPs nhỏ + lưới đặc trưng đa độ phân giải) không chỉ đảm bảo bản đồ chi tiết và độ chính xác theo dõi cao, mà còn nhanh hơn và ít tính toán hơn nhờ vào lợi ích của việc cập nhật cảnh cục bộ. Bên cạnh đó, mạng của chúng tôi có thể lấp đầy các lỗ nhỏ và ngoại suy hình học cảnh vào các vùng chưa quan sát, từ đó ổn định việc theo dõi camera.
+
+*Hạn chế.* Khả năng dự đoán của phương pháp của chúng tôi bị giới hạn bởi quy mô của đại diện thô. Ngoài ra, phương pháp của chúng tôi không thực hiện việc đóng vòng lặp, điều này là một hướng phát triển thú vị trong tương lai. Cuối cùng, mặc dù các phương pháp truyền thống thiếu một số tính năng, nhưng vẫn còn một khoảng cách hiệu suất so với các phương pháp học máy cần phải được thu hẹp.

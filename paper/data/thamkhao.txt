@@ -1,0 +1,14 @@
+
+tham khao ung dung cua SLAM
+https://www.thinkautonomous.ai/blog/visual-slam/
+
+Dung de lay anh
+https://www.researchgate.net/figure/The-main-sensors-used-in-SLAM-and-their-advantages-disadvantages-and-applications_fig3_365825855
+
+https://bair.berkeley.edu/blog/2018/10/23/depth-sensing/
+
+https://onlinelibrary.wiley.com/doi/10.1155/2017/8037607
+
+
+#j4f
+https://hackmd.io/@LightSheng/HJOWTKg6a
