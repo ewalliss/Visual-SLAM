@@ -73,7 +73,8 @@ $
 hat(D)_(v a r)^(c) = sum_(i = 1)^N w_i^c (hat(D)^c - d_i)^2, \ 
 hat(D)_(v a r)^(f) = sum_(i = 1)^N w_i^f (hat(D)^f - d_i)^2 quad "(7)"
 $
-3.3. Lập bản đồ và theo dõi
+
+== Lập bản đồ và theo dõi
 
 Trong phần này, chúng tôi cung cấp chi tiết về việc tối ưu hóa các tham số hình học $theta$ và ngoại hình $ω$ của biểu diễn cảnh phân cấp của chúng tôi, và của các vị trí máy ảnh.
 
