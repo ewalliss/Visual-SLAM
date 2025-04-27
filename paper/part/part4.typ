@@ -31,7 +31,7 @@ Chi tiết triển khai. Chúng tôi chạy hệ thống SLAM của mình trên 
     #table(
       columns: 5, align: (left, center, center, center, center,), table.header([Method], table.cell(
         align: center, colspan: 4,
-      )[Reconstruction Results (average over 8 scenes)]), table.hline(), [2-5], [Mem. (MB)], [Depth L1 $arrow.b$], [Acc. $arrow.b$], [Comp. $arrow.b$], [TSDF-Fusion \[11\]], [67.10], [7.57], [1.60], [3.49], [iMAP \[46\]], [1.04], [23.33], [6.95], [5.33], [iMAP\* \[46\]], [3.78], [23.53], [19.40], [10.19], [DI-Fusion \[16\]], [12.02], [3.53], [2.85], [3.00], [NICE-SLAM], [12.96], [2.85], [2.65], [3.00],
+      )[Reconstruction Results (average over 8 scenes)]), table.hline(), [2-5], [Mem. (MB)], [Depth L1 $arrow.b$], [Acc. $arrow.b$], [Comp. $arrow.b$], [TSDF-Fusion \[11\]], [67.10], [7.57], [1.60], [3.49], [iMAP \[46\]], [1.04], [23.33], [6.95], [5.33], [iMAP$ast.basic$ \[46\]], [3.78], [23.53], [19.40], [10.19], [DI-Fusion \[16\]], [12.02], [3.53], [2.85], [3.00], [NICE-SLAM], [12.96], [2.85], [2.65], [3.00],
     )], 
     supplement: "Bảng",
     caption: 
@@ -53,15 +53,15 @@ Chúng tôi cũng đánh giá hiệu suất theo dõi camera trên tập dữ li
   align(
     center,
   )[#table(
-      columns: 5, align: (left, center, center, center, center,), table.header([Scene ID], [fr1/desk], [fr2/xyz], [fr3/office], []), table.hline(), [iMAP \[46\]], [4.9], [2.0], [5.8], [], [iMAP\* \[46\]], [7.2], [2.1], [9.0], [], [DI-Fusion \[16\]], [4.4], [2.3], [15.6], [], [NICE-SLAM], [2.7], [1.8], [3.0], [], [BAD-SLAM \[42\]], [1.7], [1.1], [1.7], [], [Kintinuous \[59\]], [3.7], [2.9], [3.0], [], [ORB-SLAM2 \[26\]], [1.6], [0.4], [1.0], [],
+      columns: 5, align: (left, center, center, center, center,), table.header([Scene ID], [fr1/desk], [fr2/xyz], [fr3/office], []), table.hline(), [iMAP \[46\]], [4.9], [2.0], [5.8], [], [iMAP$ast.basic$ \[46\]], [7.2], [2.1], [9.0], [], [DI-Fusion \[16\]], [4.4], [2.3], [15.6], [], [NICE-SLAM], [2.7], [1.8], [3.0], [], [BAD-SLAM \[42\]], [1.7], [1.1], [1.7], [], [Kintinuous \[59\]], [3.7], [2.9], [3.0], [], [ORB-SLAM2 \[26\]], [1.6], [0.4], [1.0], [],
     )], caption: [*Kết quả theo dõi camera trên ScanNet \[13\].* Kết quả theo dõi camera trên bộ dữ liệu TUM RGB-D \[45\]. ATE RMSE \[cm\] ($arrow.b$) được sử dụng làm chỉ số đánh giá. NICE-SLAM giảm khoảng cách giữa các phương pháp SLAM với đại diện ẩn và các phương pháp truyền thống. Chúng tôi báo cáo kết quả tốt nhất trong 5 lần chạy cho tất cả các phương pháp trong bảng này. Các số liệu cho iMAP, BAD-SLAM, Kintinuous và ORB-SLAM2 được lấy từ \[46\].], supplement: "Bảng", 
 )
 
 *Đánh giá trên ScanNet [13].*
-Chúng tôi chọn nhiều cảnh lớn từ tập dữ liệu ScanNet [13] để đánh giá khả năng mở rộng của các phương pháp khác nhau. Về mặt hình học, như thể hiện ở Hình 4, có thể thấy rõ rằng NICE-SLAM tạo ra hình học sắc nét và chi tiết hơn so với TSDF-Fusion, DI-Fusion và iMAP∗. Về theo dõi, có thể quan sát thấy rằng iMAP∗ và DI-Fusion hoặc là thất bại hoàn toàn hoặc xuất hiện lỗi trôi lớn, trong khi phương pháp của chúng tôi thành công trong việc tái tạo toàn bộ cảnh. Về mặt định lượng, kết quả theo dõi của chúng tôi cũng chính xác hơn đáng kể so với cả DI-Fusion và iMAP∗ như thể hiện trong Bảng 3.
+Chúng tôi chọn nhiều cảnh lớn từ tập dữ liệu ScanNet [13] để đánh giá khả năng mở rộng của các phương pháp khác nhau. Về mặt hình học, như thể hiện ở Hình 4, có thể thấy rõ rằng NICE-SLAM tạo ra hình học sắc nét và chi tiết hơn so với TSDF-Fusion, DI-Fusion và iMAP$ast.basic$. Về theo dõi, có thể quan sát thấy rằng iMAP$ast.basic$ và DI-Fusion hoặc là thất bại hoàn toàn hoặc xuất hiện lỗi trôi lớn, trong khi phương pháp của chúng tôi thành công trong việc tái tạo toàn bộ cảnh. Về mặt định lượng, kết quả theo dõi của chúng tôi cũng chính xác hơn đáng kể so với cả DI-Fusion và iMAP$ast.basic$ như thể hiện trong Bảng 3.
 
 *Đánh giá trên Cảnh Lớn hơn.
-*Để đánh giá khả năng mở rộng của phương pháp, chúng tôi đã thu thập một chuỗi dữ liệu trong một căn hộ lớn với nhiều phòng. Hình 1 và Hình 5 cho thấy các bản dựng lại bằng NICE-SLAM, DI-Fusion [16] và iMAP∗[46]. Để tham khảo, chúng tôi cũng trình bày bản dựng 3D bằng công cụ offline Redwood [10] trong Open3D [69]. Có thể thấy rằng NICE-SLAM đạt được kết quả tương đương với phương pháp offline, trong khi iMAP∗ và DI-Fusion không thể dựng lại toàn bộ chuỗi dữ liệu.
+*Để đánh giá khả năng mở rộng của phương pháp, chúng tôi đã thu thập một chuỗi dữ liệu trong một căn hộ lớn với nhiều phòng. Hình 1 và Hình 5 cho thấy các bản dựng lại bằng NICE-SLAM, DI-Fusion [16] và iMAP$ast.basic$[46]. Để tham khảo, chúng tôi cũng trình bày bản dựng 3D bằng công cụ offline Redwood [10] trong Open3D [69]. Có thể thấy rằng NICE-SLAM đạt được kết quả tương đương với phương pháp offline, trong khi iMAP$ast.basic$ và DI-Fusion không thể dựng lại toàn bộ chuỗi dữ liệu.
 
 \
 
@@ -70,7 +70,7 @@ Chúng tôi chọn nhiều cảnh lớn từ tập dữ liệu ScanNet [13] đ�
     center,
   )[#table(
       columns: 8, align: (left, center, center, center, center,), table.header([Scene ID], [0000], [0059], [0106], [0169], [0181], [0207], [Avg]), table.hline(), 
-      [*iMAP*\* \[46\]], 
+      [*iMAP*$ast.basic$ \[46\]], 
       [55.95], [32.06], [17.50], [70.51],[32.10], [11.91], [36.67],
        [*DI-Fusion* \[16\]], [62.99], [128.00], [18.50], [75.80], [87.88], [100.19], [78.89],
        [*NICE-SLAM*], [8.64], [12.25], [8.09], [10.28],[12.93], [5.59], [9.63],
@@ -113,9 +113,9 @@ Ngoài việc đánh giá tái tạo cảnh và theo dõi camera trên các bộ
 
 #strong[Thời gian chạy.] Chúng tôi cũng so sánh trong Bảng 4 thời gian chạy cho theo dõi và tạo bản đồ sử dụng cùng số lượng mẫu pixel ($M_t$ = 200 cho theo dõi và M = 1000 cho tạo bản đồ). Chúng tôi nhận thấy rằng phương pháp của chúng tôi nhanh hơn hơn 2x và 3x so với iMAP trong theo dõi và tạo bản đồ. Điều này chỉ ra lợi thế của việc sử dụng các lưới đặc trưng với bộ giải MLP nông thay vì một MLP nặng.
 
-#strong[Độ bền với các đối tượng động.] Ở đây, chúng tôi xem xét bộ dữ liệu Co-Fusion \[39\] chứa các đối tượng di chuyển động. Như minh họa trong Hình 6, phương pháp của chúng tôi đúng đắn nhận diện và bỏ qua các mẫu pixel rơi vào đối tượng động trong quá trình tối ưu hóa, giúp cải thiện mô hình đại diện cảnh (xem các RGB và độ sâu đã được render). Hơn nữa, chúng tôi cũng so sánh với iMAP\* trên cùng một chuỗi cho theo dõi camera. Kết quả ATE RMSE của chúng tôi và iMAP\* lần lượt là 1.6cm và 7.8cm, điều này rõ ràng chứng minh độ bền của chúng tôi với các đối tượng động.
+#strong[Độ bền với các đối tượng động.] Ở đây, chúng tôi xem xét bộ dữ liệu Co-Fusion \[39\] chứa các đối tượng di chuyển động. Như minh họa trong Hình 6, phương pháp của chúng tôi đúng đắn nhận diện và bỏ qua các mẫu pixel rơi vào đối tượng động trong quá trình tối ưu hóa, giúp cải thiện mô hình đại diện cảnh (xem các RGB và độ sâu đã được render). Hơn nữa, chúng tôi cũng so sánh với iMAP$ast.basic$ trên cùng một chuỗi cho theo dõi camera. Kết quả ATE RMSE của chúng tôi và iMAP$ast.basic$ lần lượt là 1.6cm và 7.8cm, điều này rõ ràng chứng minh độ bền của chúng tôi với các đối tượng động.
 
-#strong[Dự báo hình học và Lấp đầy lỗ.] Như minh họa trong Hình 7, chúng tôi có thể hoàn thiện các khu vực cảnh chưa được quan sát nhờ vào việc sử dụng cảnh prior mức độ thô. Ngược lại, các khu vực chưa thấy được tái tạo lại bởi iMAP\* rất ồn ào do không có thông tin prior cảnh nào được mã hóa trong iMAP\*.
+#strong[Dự báo hình học và Lấp đầy lỗ.] Như minh họa trong Hình 7, chúng tôi có thể hoàn thiện các khu vực cảnh chưa được quan sát nhờ vào việc sử dụng cảnh prior mức độ thô. Ngược lại, các khu vực chưa thấy được tái tạo lại bởi iMAP$ast.basic$ rất ồn ào do không có thông tin prior cảnh nào được mã hóa trong iMAP$ast.basic$.
 
 #figure(
   image("/paper/data/Robustness to Dynamic Objects.png"),

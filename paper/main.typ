@@ -69,7 +69,7 @@
 
 #set pagebreak()
 
-= Introduction
+= Giới thiệu
 
 Trong một không gian chưa biết trước, việc để một robot di chuyển tự do xung quanh cần xây dựng một bản đề khu vực đấy đồng thời xác định vị trí chính nó trong bản đồ đấy. Để giải quyết quá trình này, một phương pháp tên là Simultaneous Localization And Mapping - SLAM (Định vị và Lập bản đồ Đồng thời). 
 
@@ -99,7 +99,23 @@ Chính những hạn chế này của SLAM truyền thống đã thúc đẩy s�
 
 Với việc thay thế các phương pháp cũ bằng các đại diện cảnh liên tục và khả năng tối ưu hóa thông qua các bộ giải mã ẩn thần kinh, NICE-SLAM không chỉ cải thiện độ chính xác mà còn làm tăng khả năng *mở rộng* và *xử lý môi trường động*. Điều này giúp hệ thống hoạt động tốt hơn trong các tình huống thực tế phức tạp, nơi SLAM truyền thống không còn hiệu quả, mở ra khả năng ứng dụng mạnh mẽ hơn trong các lĩnh vực như robot tự hành, xe tự lái và thực tế ảo, nơi các môi trường thường xuyên thay đổi và yêu cầu khả năng tái tạo cảnh vật chính xác trong thời gian thực.
 
-== Outline
+== Dàn ý
+Phần còn lại của bài báo được cấu trúc như sau: 
+- *Phần 2* trình bày các công trình nghiên cứu liên quan. 
+- *Phần 3* trình bày cụ thể về phương pháp, với từng công đoạn cụ thể.
+- *Phần 4* trình bày thực nghiệm của mô hình trên một số tập dữ liệu khác nhau, bao gồm mô tả bộ dữ liệu và phần mềm, cũng như đánh giá kết quả thực nghiệm trên từng bộ dữ liệu.
+
+== Phương pháp truyền thống
+Một hệ thống ứng dụng phương pháp truyền thống đã được phát triển. Quy trình cơ bản của hệ thống này bao gồm các bước sau:
+- Lấy 1 dãy ảnh trong dữ liệu RGB-D từ máy Kinect;
+- Thực hiện trích xuất và so khớp đặc trưng bằng SIFT/SURF;
+- Tính toán các phép biến đổi tương đối bằng RANSAC;
+- Tính các góc nhìn ban đầu và biến đổi chúng thành các đỉnh và cạnh $g^2 o$;
+- Phát hiện các điểm kết thúc vòng lặp (loop closures) và thêm các cạnh tương ứng vào đồ thị;
+- Tối ưu hoá đồ thị bằng $g^2 o$ và trích xuất những góc quay mới;
+- Tái tạo toàn cảnh dữ liệu bằng cách sinh ra 1 file chứa các đám mây điểm.
+
+Tuy nhiên, đây là một phương pháp cũ, đòi hỏi rất nhiều tài nguyên, vậy nên không thực tế. 
 
 #include "part/part2.typ"
 
